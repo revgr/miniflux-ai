@@ -7,7 +7,7 @@ from core.process_entries import process_entry
 
 
 def fetch_unread_entries(config, miniflux_client):
-    entries = miniflux_client.get_entries(status=['unread'], limit=10000)
+    entries = miniflux_client.get_entries(status=['unread'], limit=1000)
     start_time = time.time()
     logger.info('Get unread entries: ' + str(len(entries['entries']))) if len(entries['entries']) > 0 else logger.info('No new entries')
 
